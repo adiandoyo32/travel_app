@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:travel_app/data/hotel.dart';
+import 'package:travel_app/pages/home/widgets/banner_carousel.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -35,10 +36,26 @@ class HomePage extends StatelessWidget {
               color: Colors.blue,
             ),
             Transform.translate(
-              offset: const Offset(0, -100),
+              offset: const Offset(0, -70),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  const SizedBox(
+                    height: 100,
+                    child: BannerCarousel(),
+                  ),
+                  const SizedBox(height: 16),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Rekomendasi Villa",
+                            style: Theme.of(context).textTheme.titleLarge),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 8),
                   SizedBox(
                     height: 300,
                     child: ListView.separated(
@@ -139,17 +156,6 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Rekomendasi Hotel",
-                            style: Theme.of(context).textTheme.titleLarge),
-                      ],
-                    ),
-                  ),
-                  Container()
                 ],
               ),
             ),
